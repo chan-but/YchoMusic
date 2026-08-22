@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YchoMusic</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/tailwind.css" />
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; background: #08080c; overflow: hidden; }
+      #boot-splash {
+        position: fixed; inset: 0; z-index: 9999;
+        display: grid; place-items: center;
+        background: radial-gradient(ellipse at center, #10121a 0%, #08080c 80%);
+        color: #fff;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+      }
+      #boot-splash.is-hidden {
+        opacity: 0; visibility: hidden; pointer-events: none;
+      }
+      .boot-inner {
+        display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+        animation: boot-in 0.5s ease both;
+      }
+      .boot-logo {
+        width: 64px; height: 64px; border-radius: 50%;
+        background: linear-gradient(135deg, #00d4ff, #ff6b9d);
+        display: grid; place-items: center;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        font-weight: 800; font-size: 30px; color: #08080c;
+        box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+      }
+      .boot-name {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;
+        background: linear-gradient(135deg, #fff, #9aa0a8);
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .boot-loader {
+        width: 200px; height: 4px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 2px; overflow: hidden;
+        position: relative;
+      }
+      .boot-loader-bar {
+        position: absolute; top: 0; left: 0; height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #00d4ff, #ff6b9d);
+        border-radius: 2px;
+        box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+        transition: width 0.25s ease-out;
+      }
+      .boot-hint {
+        font-family: 'Consolas', monospace;
+        font-size: 0.72rem; color: #6a7080;
+        letter-spacing: 0.08em;
+      }
+      @keyframes boot-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+  </head>
+  <body>
+    <div id="boot-splash">
+      <div class="boot-inner">
+        <div class="boot-logo">Y</div>
+        <div class="boot-name">YchoMusic</div>
+        <div class="boot-loader"><div class="boot-loader-bar" id="boot-bar"></div></div>
+        <div class="boot-hint" id="boot-hint">LOADING MUSIC LIBRARY…</div>
+      </div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
