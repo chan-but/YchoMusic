@@ -1,0 +1,9 @@
+pub mod audio;
+pub mod browse;
+pub mod folders;
+pub mod favorites;
+pub mod library;
+pub mod lyrics;
+pub mod playlist;
+pub mod settings;
+pub mod stats;
