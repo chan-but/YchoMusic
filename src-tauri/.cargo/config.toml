@@ -1,0 +1,2 @@
+# windows_subsystem is set via #[cfg_attr] in main.rs
+# Do not set /SUBSYSTEM:windows here — it breaks build scripts

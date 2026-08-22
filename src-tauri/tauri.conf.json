@@ -1,0 +1,43 @@
+{
+  "productName": "YchoMusic",
+  "version": "0.1.0",
+  "identifier": "com.ychomusic.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist",
+    "devUrl": "http://127.0.0.1:5173"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "YchoMusic",
+        "url": "http://127.0.0.1:5173",
+        "width": 1200,
+        "height": 800,
+        "resizable": true,
+        "minWidth": 320,
+        "minHeight": 100,
+        "decorations": false,
+        "transparent": false,
+        "backgroundColor": "#08080c",
+        "visible": true,
+        "label": "main"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

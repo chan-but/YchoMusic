@@ -1,0 +1,26 @@
+[package]
+name = "YchoMusic"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "devtools"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-global-shortcut = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+symphonia = { version = "0.6", features = ["aac", "alac", "flac", "isomp4", "mp3", "ogg", "pcm", "vorbis"] }
+rodio = "0.18"
+lofty = "0.18"
+rusqlite = { version = "0.31", features = ["bundled", "serde_json"] }
+dirs = "5"
+thiserror = "1"
+log = "0.4"
+env_logger = "0.11"
+lazy_static = "1.4"
+rand = "0.8"
+regex = "1"
+base64 = "0.22"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
